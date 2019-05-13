@@ -4,8 +4,8 @@ const users = [
         userName: "John Doe",
         userAvatar: "userPlaceholder.png",
         userDesc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet beatae, rerum officia aliquam suscipit eos cupiditate officiis tempore labore consequatur.",
-        userStars: 8,
-        userFollowers: 9
+        userStars: 0,
+        userFollowers: 0
     },
     {
         id: 2,

@@ -10,10 +10,24 @@ export default function User({ userData }) {
                     <div className="users__avatar">
                         <img src={`./img/users/${userData.userAvatar}`} alt="User Avatar" />
                     </div>
-                    <div className="users__name">{userData.userName}</div>
-                    <div className="users__desc">{userData.userDesc}</div>
-                    <div className="users__stars">{userData.userStars}</div>
-                    <div className="users__followers">{userData.userFollowers}</div>
+                    <div className="users__name">
+                        {userData.userName}
+                    </div>
+                    <div className=" users__desc">
+                        {userData.userDesc}
+                    </div>
+                    <div className="tab users__stars">
+                        <i className="fa fa-star"></i>
+                        {userData.userStars}
+                    </div>
+                    <div className="tab users__followers">       
+                        <i className="fa fa-users"></i> {userData.userFollowers}
+                    </div>
+                    <div>
+                    <button className="btn btn-link">View on Github</button>
+                    </div>
+                    
+                    
                 </div>
             )
         }

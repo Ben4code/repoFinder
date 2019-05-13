@@ -10,12 +10,10 @@ export default class Users extends Component {
     resData: false,
     users: null
   }
-
   
   componentDidMount(){
     this.setState({users: users})
   }
-  
   
   getUsers = (users) => {
     if(users !== null){
