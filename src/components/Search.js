@@ -27,9 +27,10 @@ export default class Search extends Component {
                 <h1 className="search__title">Search Git User</h1>
                 <div className="search__form">
                     <form onSubmit={(e)=> this.searchSubmit(e)}>
-                        <label htmlFor="search">Search User </label>
-                        <input type="text" value={this.state.searchTerm} onChange={(e)=> this.getTerm(e)} />
+                        <input type="text" value={this.state.searchTerm} onChange={(e)=> this.getTerm(e)}  placeholder="Enter user name."/>
                         { this.state.error ? <p className="error">Search field cannot be left empty.</p> : null}
+
+                        <button className="btn btn-search">Search</button>
                     </form>
                 </div>
             </div>

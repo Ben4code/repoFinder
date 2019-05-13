@@ -2,6 +2,7 @@
 :root{
   --primary-color: teal;
   --sec-color: turquoise;
+  --grey-color: #ddd;
   --err-color: red;
 }
 
@@ -54,16 +55,48 @@ nav a{
 }
 
 /* ------ Search Styles ------- */
-  .search{
-    padding: .5rem 9rem;
-    margin: 5rem 0;
-    font-size: 1.8rem;
-    text-align: center;
-  }
+.search{
+  padding: .5rem 9rem;
+  margin: 5rem 0;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.search__title{
+  color: var(--primary-color);
+}
+.search__form input{
+  margin-top: 2rem;
+  border: 1px solid var(--primary-color);
+  padding: .9rem;
+  width: 30%;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+  box-shadow: 0 .1rem .9rem .2rem rgba(0,0,0,.1) inset;
+}
 
 
-/* ------ Error Styles ------- */
+/* ------ Users Styles ------- */
+.users{
+  background: var(--grey-color);
+  padding: 0 9rem;
+}
+
+/* ------ Ultility Styles ------- */
 .error{
   color: var(--err-color);
   font-size: 12px;
+}
+.btn{
+  border: none;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.btn-search{
+  border-radius: 0 10px 10px 0;
+  outline: none;
+}
+.btn:hover{
+  background-color: var(--sec-color);
+  cursor: pointer;
 }
