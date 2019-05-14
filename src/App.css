@@ -12,14 +12,17 @@
 *::before,
 *::after{
   margin: 0;
-  padding: 0
+  padding: 0;
+  box-sizing: inherit;
 }
 html{
   font-size: 62.5%;
   box-sizing: border-box;
 }
 body{
-  box-sizing: inherit;
+  font-size: 'Raleway' sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
 }
 a{
   text-decoration: none;
@@ -29,14 +32,14 @@ li{
 }
 
 /* ---------- Navbar Styles --------- */
-nav{
+.navMain{
   background-color: var(--primary-color);
   font-size: 1.8rem;
   display: flex;
   justify-content: space-between;
   padding: .5rem 8rem;
 }
-nav a{
+.navMain a{
   color: #fff;
 }
 .logo{
@@ -82,17 +85,12 @@ nav a{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   grid-gap: 5rem;
-  /* justify-content: space-evenly;
-  flex-wrap: wrap; */
-  
 }
 .users__card{
   background-color: #fff;
   border-radius: .5rem;
-  width: 25rem;
-  height: auto;
+  height: 36rem;
   padding: 2rem;
-  /* margin: 5rem 0; */
   box-shadow: 0 1rem 2rem rgba(0,0,0, .2);
   text-align: center;
   position: relative;
@@ -113,6 +111,7 @@ nav a{
   margin: .5rem 0;
   font-size: 1.4rem;
   text-align: start;
+  height: 10rem;
 }
 .users__stars{
   left: 1rem;

@@ -14,7 +14,7 @@ export default function User({ userData }) {
                         {userData.userName}
                     </div>
                     <div className=" users__desc">
-                        {userData.userDesc}
+                        {userData.userDesc.length > 140 ? userData.userDesc.substr(0, 140)+ "..." : userData.userDesc}
                     </div>
                     <div className="tab users__stars">
                         <i className="fa fa-star"></i>

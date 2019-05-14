@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
-import {users} from './Data';
+//import {users} from './Data';
 import User from './User';
-
+// import Pagination from './Pagination';
 
 
 export default class Users extends Component {
   
-  state = {
-    resData: false,
-    users: null
-  }
+  // state = {
+    
+  //   users: null
+  // }
   
-  componentDidMount(){
-    this.setState({users: users})
-  }
+  // componentDidMount(){
+  //   this.setState({users: this.props.users})
+  // }
   
   getUsers = (users) => {
-    if(users !== null){
+    if(users !== ''){
       return users.map(user => (
         <User key={user.id} userData={user}/>
       ))
@@ -26,7 +26,7 @@ export default class Users extends Component {
   render() {
     return (
       <div className="users">
-        {this.getUsers(this.state.users)}
+        {this.getUsers(this.props.users)}
       </div>
     )
   }

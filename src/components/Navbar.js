@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Navbar() {
     return (
-        <nav>
+        <nav className="navMain">
             <div className="logo">
                 <a href="/">Repo Finder</a>
             </div>
