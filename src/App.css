@@ -30,6 +30,11 @@ a{
 li{
   list-style: none;
 }
+.App{
+  min-height: 100vh;
+  position: relative;
+}
+
 
 /* ---------- Navbar Styles --------- */
 .navMain{
@@ -38,10 +43,12 @@ li{
   display: flex;
   justify-content: space-between;
   padding: .5rem 8rem;
+  height: 8vh;
 }
 .navMain a{
   color: #fff;
 }
+
 .logo{
   padding: 1rem;
 }
@@ -55,6 +62,19 @@ li{
 }
 .nav__list-item:hover{
   background-color: var(--sec-color);
+}
+
+/* ------ Footer Styles ------- */
+.footer{
+  background-color: var(--primary-color);
+  font-size: 1.8rem;  
+  padding: .5rem 8rem; 
+  color: #fff;
+  text-align: center;
+  height: 6vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;  
 }
 
 /* ------ Search Styles ------- */
@@ -81,7 +101,7 @@ li{
 /* ------ Users Styles ------- */
 .users{
   background: var(--grey-color);
-  padding: 3rem 9rem;
+  padding: 5rem 9rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   grid-gap: 5rem;
@@ -89,7 +109,7 @@ li{
 .users__card{
   background-color: #fff;
   border-radius: .5rem;
-  height: 36rem;
+  height: 30rem;
   padding: 2rem;
   box-shadow: 0 1rem 2rem rgba(0,0,0, .2);
   text-align: center;
@@ -123,7 +143,13 @@ li{
   right: 1rem;
 }
 
-
+/* ------ Pagination Styles ------- */
+.pagination{
+  /* margin: 3rem 0; */
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 6rem 0;
+}
 
 /* ------ Ultility Styles ------- */
 .error{
@@ -146,7 +172,19 @@ li{
 }
 .btn-link{
   width: 100%;
-  margin: 1rem 0;
+  margin: 1rem 0; 
+}
+.link{
+  align-items: flex-start;
+  text-align: center;
+  color: initial;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  font-size: 1.3rem;
+  font-family: Arial;
+  cursor: pointer;
 }
 .tab{
   position: absolute;

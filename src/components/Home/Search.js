@@ -28,9 +28,10 @@ export default class Search extends Component {
                 <div className="search__form">
                     <form onSubmit={(e)=> this.searchSubmit(e)}>
                         <input type="text" value={this.state.searchTerm} onChange={(e)=> this.getTerm(e)}  placeholder="Enter user name."/>
+                        <button className="btn btn-search">Search</button>
                         { this.state.error ? <p className="error">Search field cannot be left empty.</p> : null}
 
-                        <button className="btn btn-search">Search</button>
+                        
                     </form>
                 </div>
             </div>
