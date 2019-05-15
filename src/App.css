@@ -3,6 +3,7 @@
   --primary-color: teal;
   --sec-color: turquoise;
   --grey-color: #ddd;
+  --disabled-color: rgb(91, 135, 135);
   --err-color: red;
 }
 
@@ -173,6 +174,13 @@ li{
 .btn-link{
   width: 100%;
   margin: 1rem 0; 
+}
+.btn-disabled{
+  background-color: var(--disabled-color);
+  cursor: default;
+  border: none;
+  padding: 1rem;
+  color: #fff;
 }
 .link{
   align-items: flex-start;
