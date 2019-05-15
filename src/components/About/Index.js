@@ -3,8 +3,12 @@ import React from 'react'
 export default function Index() {
   return (
     <div className="about">
+    
       <h1>About App</h1>
-      <p>This was was built in response to an interview test exercise.</p>
+      <p>Git Finder - Search github users.</p> 
+
+      <p>Created with React.js (create-react-app).</p> 
+      <p>This app was built in response to an interview test exercise.</p> 
       <p>Luckily nobody got injured during the process of making this app ":)"</p>
       <p>I learnt a lot during the coding process and hope this repo might be of some use to you. </p>
 
