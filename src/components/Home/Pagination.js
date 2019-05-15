@@ -20,8 +20,6 @@ export default class Pagination extends Component {
 
 
   showLinks = (links) => {
-    console.log(links);
-    
     if (links) {
       return (
         <div>

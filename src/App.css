@@ -183,6 +183,16 @@ li{
   color: var(--primary-color);
 }
 
+/* ------ About Styles ------- */
+.about{
+  padding: .5rem 9rem;
+  margin: 5rem 0;
+  font-size: 1.8rem;
+}
+.about h1{
+  color: var(--primary-color);
+}
+
 /* ------ Ultility Styles ------- */
 .error{
   color: var(--err-color);
