@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 
+
 export default class Pagination extends Component {
   state = {
     links: {}
@@ -13,36 +14,37 @@ export default class Pagination extends Component {
     else return null;
   }
 
-  navClick = (click) => {
-    console.log(click);
+  navClick = (url) => {
+    this.props.paginationUrl(url);
   }
 
 
   showLinks = (links) => {
-
+    console.log(links);
+    
     if (links) {
       return (
         <div>
           <button className={links.firstLink ? "btn" : "btn-disabled"}
             disabled={!links.firstLink ? true : false}
-            onClick={() => this.navClick()}
+            onClick={() => this.navClick(links.firstLink)}
           > &lt;&lt;{links.prevPage === 0 ? null : 1 }  </button>
 
           <button className={links.prevLink ? "btn" : "btn-disabled"}
             disabled={!links.prevLink ? true : false}
-            onClick={() => this.navClick()}
+            onClick={() => this.navClick(links.prevLink)}
           >&lt; {links.prevPage === 0 ? null : links.prevPage }</button>
 
-          <button className="btn" onClick={() => this.navClick()}> {links.currentPage} </button>
+          <button className="btn"> {links.currentPage} </button>
 
           <button className={links.nextLink ? "btn" : "btn-disabled"}
             disabled={!links.nextLink ? true : false}
-            onClick={() => this.navClick()}
+            onClick={() => this.navClick(links.nextLink)}
           > {links.nextPage === links.searchCount ? null : links.nextPage } &gt;</button>
 
           <button className={links.lastLink ? "btn" : "btn-disabled"}
             disabled={!links.lastLink ? true : false}
-            onClick={() => this.navClick()}
+            onClick={() => this.navClick(links.lastLink)}
           > &gt;&gt;</button>
         </div>
       )

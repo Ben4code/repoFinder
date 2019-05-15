@@ -157,8 +157,30 @@ li{
 }
 .pagination p{
   font-size: 1.3rem;
-  text-align: center;
+  text-align: center; 
+}
+
+/* ------ Modal Styles ------- */
+.modal__content{
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 4rem;
   
+}
+.modal__content-img img{
+  height: 100%;
+  width: 20rem;
+  border-radius: 50%;
+  border: .3rem solid var(--primary-color);
+  margin: .5rem 0;
+}
+.modal__content-text{
+  text-align: center;
+}
+.modal__content-text h2{
+  color: var(--primary-color);
 }
 
 /* ------ Ultility Styles ------- */
