@@ -5,7 +5,7 @@ export default function Navbar() {
     return (
         <nav className="navMain">
             <div className="logo">
-                <a href="/">Repo Finder</a>
+                <a href="/">Git Finder</a>
             </div>
             <ul className="nav__list">
                 <li className="nav__list-item"><NavLink to="/">Home</NavLink></li>
