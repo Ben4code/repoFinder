@@ -19,29 +19,31 @@ export default class Pagination extends Component {
 
 
   showLinks = (links) => {
-    
+
     if (links) {
       return (
-        <div className="pagination">
-          <button className={ links.firstLink ? "btn" : "btn-disabled"}
-            disabled={! links.firstLink ? true : false}
+        <div>
+          <button className={links.firstLink ? "btn" : "btn-disabled"}
+            disabled={!links.firstLink ? true : false}
             onClick={() => this.navClick()}
-          >&lt;&lt;</button>
+          > &lt;&lt;{links.prevPage === 0 ? null : 1 }  </button>
 
-          <button className={ links.prevLink ? "btn" : "btn-disabled"}
-            disabled={! links.prevLink ? true : false}
+          <button className={links.prevLink ? "btn" : "btn-disabled"}
+            disabled={!links.prevLink ? true : false}
             onClick={() => this.navClick()}
-          >&lt;</button>
+          >&lt; {links.prevPage === 0 ? null : links.prevPage }</button>
 
-          <button className={ links.nextLink ? "btn" : "btn-disabled"}
-            disabled={! links.nextLink ? true : false}
-            onClick={() => this.navClick()}
-          >&gt;</button>
+          <button className="btn" onClick={() => this.navClick()}> {links.currentPage} </button>
 
-          <button className={ links.lastLink ? "btn" : "btn-disabled"}
-            disabled={! links.lastLink ? true : false}
+          <button className={links.nextLink ? "btn" : "btn-disabled"}
+            disabled={!links.nextLink ? true : false}
             onClick={() => this.navClick()}
-          >&gt;&gt;</button>
+          > {links.nextPage === links.searchCount ? null : links.nextPage } &gt;</button>
+
+          <button className={links.lastLink ? "btn" : "btn-disabled"}
+            disabled={!links.lastLink ? true : false}
+            onClick={() => this.navClick()}
+          > &gt;&gt;</button>
         </div>
       )
     }
@@ -50,8 +52,11 @@ export default class Pagination extends Component {
   render() {
 
     return (
-      <div>
-        {this.showLinks(this.state.links)}
+      <div className="pagination">
+        <div className="pagination__links">
+          {this.showLinks(this.state.links)}
+        </div>
+        <p>Showing {this.state.links.searchCount} search results.</p>
       </div>
     )
   }

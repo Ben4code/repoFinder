@@ -146,10 +146,19 @@ li{
 
 /* ------ Pagination Styles ------- */
 .pagination{
-  /* margin: 3rem 0; */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 2rem 0 6rem 0;
+}
+.pagination__links{
+  display: flex;
+  justify-content: center;
+}
+.pagination p{
+  font-size: 1.3rem;
+  text-align: center;
+  
 }
 
 /* ------ Ultility Styles ------- */

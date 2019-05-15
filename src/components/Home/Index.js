@@ -15,7 +15,7 @@ export default class Home extends Component {
 
     fetchUsers = (search) => {
         this.setState({ searchTerm: search, searchReceived: true });
-        const searchUrl = `https://api.github.com/search/users?q=${search}&page=1&per_page=${this.state.per_page}`;
+        const searchUrl = `https://api.github.com/search/users?q=${search}&page=9&per_page=${this.state.per_page}`;
         axios.get(searchUrl)
             .then(response => {
 
@@ -72,6 +72,17 @@ export default class Home extends Component {
                     }
                     return allLink
                 })
+                //Fetch page counts
+                const searchCount = response.data.total_count;
+                let currentPage = parseInt(searchUrl.split('&')[1].replace("page=", ""));
+                const prevPage = parseInt(searchUrl.split('&')[1].replace("page=", "")) - 1;
+                const nextPage = parseInt(searchUrl.split('&')[1].replace("page=", "")) + 1;
+                
+                //Add page counts to allLink
+                allLink.currentPage = currentPage; 
+                allLink.searchCount = searchCount;
+                allLink.prevPage = prevPage;
+                allLink.nextPage = nextPage;
                 this.setState({ links: allLink});
             })
             .catch(err => {
