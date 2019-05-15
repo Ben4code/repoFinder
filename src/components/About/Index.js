@@ -16,7 +16,6 @@ export default function Index() {
       <h3>Improvements I would have made.</h3>
       <p>One aspect I would like to improve would be in the pagination and Home components, I belive that methods can be rewritten using a more DRY approach.</p>
       <p>I also would like to carryout unit tests on my dev-branch repo as well as ensure the views are responsive and accessible.</p>
-      <p>I would have also liked to add a spinner to indicate to the user that something was happening in the background.</p>
       <p>I would consider add context api or redux depending on the extent to which I desire to scale the app. Personally I feel adding a store to the app now will be a bit of an overkill.</p>
 
       <br/>

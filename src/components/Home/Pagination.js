@@ -15,7 +15,12 @@ export default class Pagination extends Component {
   }
 
   navClick = (url) => {
-    this.props.paginationUrl(url);
+    this.setState({loading: true});    
+    setInterval(()=>{
+      this.props.paginationUrl(url);
+    }, 800)    
+    
+    this.setState({loading: false});    
   }
 
 
@@ -54,7 +59,7 @@ export default class Pagination extends Component {
     return (
       <div className="pagination">
         <div className="pagination__links">
-          {this.showLinks(this.state.links)}
+            {this.showLinks(this.state.links)}
         </div>
         <p>Showing {this.state.links.searchCount} search results.</p>
       </div>

@@ -5,15 +5,19 @@ import './Modal.css';
 
 export default class User extends Component {
 
-    state = { user: '', followerCount: '', starsCount: 0, modalState: false }
+    state = { user: '', followerCount: '', starsCount: 0, modalState: false, loading: false }
 
     getProfile = (url) => {
+        //Show Spinner
+        this.setState({loading: true});        
         axios.get(url)
             .then(response => {
                 axios.get(`${response.data.followers_url}?&per_page=100`)
                     .then((res) => {
                         const followers = res.data.length;
-                        this.setState({ user: response.data, followerCount: followers, modalState: true });
+                        
+                        setInterval(()=>{}, 800)
+                        this.setState({ user: response.data, followerCount: followers, modalState: true, loading: false });
                     })
                     .catch(err => console.log(err))
             })
@@ -48,7 +52,7 @@ export default class User extends Component {
     getModal = (user) => {
             return (
                 <div>
-                    <input className= "modal-state" id="modal-1" type="checkbox" checked={this.state.modalState} />
+                    <input className= "modal-state" id="modal-1" type="checkbox" onChange={()=> console.log('clicked')} checked={this.state.modalState} />
                     <div className="modal" style={{ zIndex: 40000 }} >
                         <div className="modal__bg" htmlFor="modal-1" onClick={() => this.closeModal()}></div>
                         <div className="modal__inner">
@@ -75,9 +79,10 @@ export default class User extends Component {
 
     render() {
         return (
-            <div className="loading">
+            <div className="page">
                 {this.getUser(this.props.userData)}
                 {this.getModal(this.state.user)}
+                {this.state.loading ? <img className="loading" src="./img/Spinner.gif" alt="Spinner"/> : null}
             </div>
         )
     }

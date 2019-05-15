@@ -19,7 +19,8 @@ export default class Search extends Component {
             }, 3000)
             return;
         }
-        this.props.getSearch(this.state.searchTerm);    
+        this.props.getSearch(this.state.searchTerm); 
+        this.setState({searchTerm: ''});   
     }
     render() {
         return (
